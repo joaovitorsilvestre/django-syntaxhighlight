@@ -28,11 +28,15 @@ will have a class that have the colors to do the syntax highlight.
 
 You need just download the package called 'django-syntaxhighlight-1.0.tar.gz'.
 In terminal do:
-pip install django-syntaxhighlight-1.0.tar.gz
+
+    pip install django-syntaxhighlight-1.0.tar.gz
+    
 or 
-pip install --user django-syntaxhighlight-1.0.tar.gz
+
+    pip install --user django-syntaxhighlight-1.0.tar.gz
 
 On settings.py:
+
     INSTALLED_APPS = [
     'syntaxhighlight',
     ...
