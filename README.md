@@ -51,7 +51,7 @@ On settings.py:
         },
     ]
 
-#How use in template engine?
+#How to use it in the template?
 
 In the head of html you add the following with the arguments of which language is and
 the theme that do your what to display the code, in this order.
