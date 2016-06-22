@@ -86,8 +86,10 @@ You can see in: http://shjs.sourceforge.net/
 
 #Language and themes
 Language:
+
     python;
     pascal
 
 Themes:
+
     atom  (yes, it is just the same that atom program)
