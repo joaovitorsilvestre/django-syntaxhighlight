@@ -5,6 +5,9 @@ This is a implementation of http://shjs.sourceforge.net/.
 This app come with a template tag and a filter. Both make the template engine
 add the javascript and css needed to show the code display.
 
+#Demo app
+https://demo-django-highlight.herokuapp.com/
+
 #How it works?
 
 Imagine that you have a post, this post basically is a string, and in this string
