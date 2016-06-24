@@ -39,7 +39,7 @@ In terminal do:
 On settings.py:
 
     INSTALLED_APPS = [
-    'syntaxhighlight',
+        'syntaxhighlight',
     ...
 
     TEMPLATES = [
@@ -79,6 +79,7 @@ Then, save it in sabe 'static' folder of any app. You will get the url of this c
 'home' app, the url may be 'static/home/your_theme.css'.
 
 So just add:
+
     <html>
         <head>
             {% code_script 'python,custom,/static/home/your_theme.css' %}
@@ -86,12 +87,13 @@ So just add:
 
 #Important
 If your string is just the code, you put the @@ in the begin and at end of the string. Example:
-"""
-@@
-    for num in range(0,10):
-        print(num)
-@@
-"""  
+
+    """
+    @@
+        for num in range(0,10):
+            print(num)
+    @@
+    """  
 
 And Remember, the code in javascript was not made by me. I just make a template tag that put
 the code automatically for you on html.
