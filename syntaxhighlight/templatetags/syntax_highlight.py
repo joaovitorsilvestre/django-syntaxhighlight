@@ -1,4 +1,8 @@
 from django.template import Library
+<<<<<<< HEAD
+from django.conf import settings
+=======
+>>>>>>> 3ca36821043a3a7aabd3cb38d322b8d5def9c53b
 from django.utils.safestring import mark_safe
 from django.utils.encoding import force_text
 import os, re
@@ -11,6 +15,24 @@ language = None # global, utilizada na função format_lines e setada na code bo
 def code_script(args):
     args_list = [arg.strip() for arg in args.split(',')]
     language_js = open(os.path.join(module_dir, 'languages/sh_{}.js'.format(args_list[0]))).read() ## 0 argumento é a linguagem utilizada
+<<<<<<< HEAD
+    sh_main = open(os.path.join(module_dir, 'sh_main.js')).read()
+    if args_list[1] != 'custom':
+        theme = open(os.path.join(module_dir, 'themes/{}_style.css'.format(args_list[1]))).read()      ## 1 argumento é o tema
+        html = """
+            <script type='text/javascript'>{0};{1};</script>
+            <style type="text/css">
+                {2}
+            </style>
+        """.format(sh_main, language_js, theme)
+    else:
+        theme = args_list[2] # this last argument is the custom css
+        html = """
+            <script type='text/javascript'>{0};{1};</script>
+            <link rel="stylesheet" type="text/css" href="{2}">
+        """.format(sh_main, language_js, theme)
+
+=======
     theme = open(os.path.join(module_dir, 'themes/{}_style.css'.format(args_list[1]))).read()      ## 1 argumento é o tema
 
     sh_main = open(os.path.join(module_dir, 'sh_main.js')).read()
@@ -20,6 +42,7 @@ def code_script(args):
             {2}
         </style>
     """.format(sh_main, language_js, theme)
+>>>>>>> 3ca36821043a3a7aabd3cb38d322b8d5def9c53b
     return mark_safe(force_text(html))
 
 def format_lines(found):
