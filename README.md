@@ -1,6 +1,6 @@
-#Syntax Highlight 1.0
+#Syntax Highlight
 
-This is a implementation of http://shjs.sourceforge.net/. 
+This is a implementation of http://shjs.sourceforge.net/.
 
 This app come with a template tag and a filter. Both make the template engine
 add the javascript and css needed to show the code display.
@@ -19,7 +19,7 @@ To define which part is code and which is not, you put what do you want between
     ... and this is an example of code made in python:
     @@
     if (1>2):
-        print('It's True') 
+        print('It's True')
     @@
     this was an example of use of if.
 
@@ -108,7 +108,7 @@ Language:
     java;
     php;
     pascal;
-    
+
 
 Themes:
 
