@@ -9,7 +9,7 @@ module_dir = os.path.dirname(__file__)
 register = Library()
 
 @register.simple_tag
-def code_script(theme):
+def code_theme(theme):
     theme = theme.strip()
 
     theme_path = os.path.join(module_dir, 'themes/{}_style.css'.format(theme))
@@ -27,21 +27,21 @@ def code_script(theme):
 @register.filter
 def code_body(value,language_code):
     def format_lines(found):
-        codigo = found.group(1).splitlines()
+        code_string = found.group(1).splitlines()
 
-        if codigo[0] == '':
-            codigo.pop(0)
+        if code_string[0] == '':
+            code_string.pop(0)
 
-        for i, linha in enumerate(codigo):
-            codigo[i] = "<span class='linha_span'>" + linha + "</span>"
-        codigo = ''.join(codigo)
+        for i, linha in enumerate(code_string):
+            code_string[i] = "<span class='line_span'>" + linha + "</span>"
+        code_string = ''.join(code_string)
 
         replacer = r"""
-            <div class="bloco_codigo">
+            <div class="block_code">
                 <pre class="sh_{0}">{1}</pre>
             </div>
             <script type="text/javascript">sh_highlightDocument()</script>
-        """.format(language_code, codigo)
+        """.format(language_code, code_string)
 
         return replacer
 
@@ -51,7 +51,7 @@ def code_body(value,language_code):
     body = body.splitlines()
 
     for i, item in enumerate(body):
-        if '<div class="bloco_codigo">' not in item:
+        if '<div class="block_code">' not in item:
             body[i] = '<span class="text_span">' + item + '</span>'
 
     for i, item in enumerate(body):

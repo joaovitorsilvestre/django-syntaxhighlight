@@ -8,13 +8,13 @@ pre.sh_sourceCode {
   counter-reset: line;
 }
 
-pre.sh_sourceCode .linha_span {
+pre.sh_sourceCode .line_span {
 	display: block;
 	line-height: 1.5rem;
 	color: #D19A66;         		/* basic types */
 }
 
-.linha_span::before {
+.line_span::before {
 	counter-increment: line;
 	content: counter(line);
 	display: inline-block;
